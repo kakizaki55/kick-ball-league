@@ -7,7 +7,7 @@ import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom/cjs/reac
 function App() {
   return (
     <div className="App">
-      <p>kick ball</p>
+      <h1>kick ball</h1>
       <BrowserRouter>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/teams">Teams</NavLink>
@@ -16,8 +16,8 @@ function App() {
           <Route exact path="/">
             <h1>Kick Ball Leage HOme Page</h1>
           </Route>
-          <Route path="/players" component={TeamsList} />
-          <Route path="/player">
+          <Route path="/teams" component={TeamsList} />
+          <Route path="/players">
             <PlayerList></PlayerList>
           </Route>
         </Switch>

@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function TeamsList() {
-  return <div>TeamList</div>;
+  return <div>Team List</div>;
 }
