@@ -1,11 +1,9 @@
 import React from 'react';
 
-export default function PlayerContainer({ players }) {
+export default function PlayerContainer({ name, id }) {
   return (
     <>
-      {players.map((player) => (
-        <span key={player.id}>{player.name}</span>
-      ))}
+      <span key={id}>{name}</span>
     </>
   );
 }

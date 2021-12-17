@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function TeamContainer({ city, name, state }) {
+export default function TeamContainer({ city, name, state, id }) {
   return (
     <>
-      <div>Name:{name}</div>
+      <Link to={`/teams/${id}`}>
+        <div>Name:{name}</div>
+      </Link>
       <div>State:{state}</div>
       <div>City:{city}</div>
     </>

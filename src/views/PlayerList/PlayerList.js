@@ -1,19 +1,25 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { fetchPlayers } from '../../services/fetchPlayers';
+import { fetchPlayers, fetchPlayersByTeam } from '../../services/fetchPlayers';
 import PlayerContainer from '../../components/PlayerContainer/PlayerContainer';
 
-export default function PlayerList() {
+export default function PlayerList(props) {
   const [playerdata, setPlayerData] = useState([]);
+  const id = props.match.params.id;
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchPlayers();
-      await setPlayerData(data);
+      if (id) {
+        const data = await fetchPlayersByTeam(id);
+        await setPlayerData(data);
+        console.log(data);
+      } else {
+        const data = await fetchPlayers();
+        await setPlayerData(data);
+      }
     };
     fetchData();
   }, []);
-  console.log(playerdata);
   return (
     <>
       {playerdata.map((team) => (

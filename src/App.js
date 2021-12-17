@@ -3,7 +3,6 @@ import './views/TeamList/TeamsList';
 import TeamsList from './views/TeamList/TeamsList';
 import PlayerList from './views/PlayerList/PlayerList';
 import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
-import client from './services/client';
 
 function App() {
   return (
@@ -20,9 +19,9 @@ function App() {
             <Route exact path="/">
               <h1>Kick Ball League Home Page</h1>
             </Route>
-            <Route path="/teams" component={TeamsList} />
-            <Route path="/teams/:id" component={PlayerList} />
-            <Route path="/players" component={PlayerList} />
+            <Route exact path="/teams/:id" component={PlayerList} />
+            <Route exact path="/teams" component={TeamsList} />
+            <Route exact path="/players" component={PlayerList} />
           </Switch>
         </div>
       </BrowserRouter>
