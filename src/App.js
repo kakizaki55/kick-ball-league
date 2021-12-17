@@ -2,6 +2,7 @@ import './App.css';
 import './views/TeamList/TeamsList';
 import TeamsList from './views/TeamList/TeamsList';
 import PlayerList from './views/PlayerList/PlayerList';
+import PlayerDetail from './components/PlayerDetail/PlayerDetail';
 import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/teams/:id" component={PlayerList} />
             <Route exact path="/teams" component={TeamsList} />
             <Route exact path="/players" component={PlayerList} />
+            <Route exact path="/players/:id" component={PlayerDetail} />
           </Switch>
         </div>
       </BrowserRouter>
