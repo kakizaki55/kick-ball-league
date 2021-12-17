@@ -21,6 +21,7 @@ function App() {
               <h1>Kick Ball League Home Page</h1>
             </Route>
             <Route path="/teams" component={TeamsList} />
+            <Route path="/teams/:id" component={PlayerList} />
             <Route path="/players" component={PlayerList} />
           </Switch>
         </div>

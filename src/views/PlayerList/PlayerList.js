@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import fetchPlayers from '../../services/fetchPlayers';
+import { fetchPlayers } from '../../services/fetchPlayers';
 import PlayerContainer from '../../components/PlayerContainer/PlayerContainer';
 
 export default function PlayerList() {
@@ -14,7 +14,6 @@ export default function PlayerList() {
     fetchData();
   }, []);
   console.log(playerdata);
-
   return (
     <>
       {playerdata.map((team) => (
