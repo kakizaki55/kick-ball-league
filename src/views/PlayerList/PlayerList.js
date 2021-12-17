@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import fetchPlayers from '../../services/fetchPlayers';
+import PlayerContainer from '../../components/PlayerContainer/PlayerContainer';
 
 export default function PlayerList() {
   const [playerdata, setPlayerData] = useState([]);
@@ -14,5 +15,11 @@ export default function PlayerList() {
   }, []);
   console.log(playerdata);
 
-  return <div>Player list</div>;
+  return (
+    <>
+      {playerdata.map((team) => (
+        <PlayerContainer key={team.id} {...team} />
+      ))}
+    </>
+  );
 }
