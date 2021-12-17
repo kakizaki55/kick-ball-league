@@ -12,7 +12,6 @@ export default function PlayerList(props) {
       if (id) {
         const data = await fetchPlayersByTeam(id);
         await setPlayerData(data);
-        console.log(data);
       } else {
         const data = await fetchPlayers();
         await setPlayerData(data);
