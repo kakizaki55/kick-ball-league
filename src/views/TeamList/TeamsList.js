@@ -1,10 +1,10 @@
-import { createClient } from '@supabase/supabase-js';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import fetchTeams from '../../services/getTeams';
+import fetchTeams from '../../services/fetchTeams';
+import TeamContainer from '../../components/TeamContainer/TeamContainer';
 
 export default function TeamsList() {
-  const [TeamData, setTeamData] = useState();
+  const [teamData, setTeamData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchTeams();
@@ -12,7 +12,13 @@ export default function TeamsList() {
     };
     fetchData();
   }, []);
-  console.log(TeamData);
 
-  return <div>Team List</div>;
+  return (
+    <>
+      <div>Team List</div>
+      {teamData.map((team) => (
+        <TeamContainer key={team.id} {...team} />
+      ))}
+    </>
+  );
 }
