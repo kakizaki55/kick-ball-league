@@ -11,14 +11,14 @@ export default function PlayerList(props) {
     const fetchData = async () => {
       if (id) {
         const data = await fetchPlayersByTeam(id);
-        await setPlayerData(data);
+        setPlayerData(data);
       } else {
         const data = await fetchPlayers();
-        await setPlayerData(data);
+        setPlayerData(data);
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
   return (
     <>
       {playerdata.map((team) => (

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`finds kickball 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <h1
+      class="title"
+    >
+      kick ball
+    </h1>
+    <header
+      class="header"
+    >
+      <a
+        aria-current="page"
+        class="active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        href="/teams"
+      >
+        Teams
+      </a>
+      <a
+        href="/players"
+      >
+        Players
+      </a>
+    </header>
+    <div
+      class="routes"
+    >
+      <h1>
+        Kick Ball League Home Page
+      </h1>
+    </div>
+  </div>
+</div>
+`;

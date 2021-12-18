@@ -4,7 +4,7 @@ export default function PlayerContainer({ name, id }) {
   return (
     <>
       <Link to={`/players/${id}`}>
-        <span key={id}>{name}</span>
+        <div key={id}>{name}</div>
       </Link>
     </>
   );
