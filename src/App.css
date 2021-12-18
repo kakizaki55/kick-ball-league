@@ -1,0 +1,14 @@
+.App {
+  display: block;
+}
+.routes {
+  display: block;
+}
+.header {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  display: flex;
+  justify-content: center;
+}
