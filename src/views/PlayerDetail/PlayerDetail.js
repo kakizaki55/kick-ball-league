@@ -1,10 +1,10 @@
 import React from 'react';
-import { useState, useEffect } from 'react/cjs/react.development';
+import { useState, useEffect } from 'react';
 import { fetchPlayerDetailsById } from '../../services/fetchPlayers';
 import PlayerDetailContainer from '../../components/PlayerDetail/PlayerDetailContainer';
 
 export default function PlayerDetail(props) {
-  const [player, setPlayer] = useState(null);
+  const [player, setPlayer] = useState([]);
   const [loading, setLoading] = useState(true);
   const id = props.match.params.id;
 
