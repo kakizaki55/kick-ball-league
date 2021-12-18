@@ -5,16 +5,18 @@ import PlayerDetailContainer from '../../components/PlayerDetail/PlayerDetailCon
 
 export default function PlayerDetail(props) {
   const [player, setPlayer] = useState(null);
+  const [loading, setLoading] = useState(true);
   const id = props.match.params.id;
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchPlayerDetailsById(id);
       setPlayer(data);
+      setLoading(false);
     };
     fetchData();
   }, [id]);
-  if (!player) {
+  if (loading) {
     return <div>loading...</div>;
   }
   return (
